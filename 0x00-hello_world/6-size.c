@@ -1,8 +1,8 @@
 /*
- * Author: Salma
- * This is a program to print the sizes of different types based on a computer
+ * Auth: Salma
+ * This is a program to print the sizes of different types based on a computer.
  */
- 
+
 #include <stdio.h>
 
 /**
