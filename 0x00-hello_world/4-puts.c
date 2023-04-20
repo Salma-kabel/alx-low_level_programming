@@ -1,9 +1,15 @@
 #include <stdio.h>
+/*
+ * File: 4-puts.c
+ * Author: Salma
+ */
+
+#include <stdio.h>
 
 /**
- * main : Printing "Programming is like building a multilingual
+ * main : Uswd to print "Programming is like building a multilingual
  *                puzzle, followed by a new line.
- * 
+ *
  * Return: Always 0.
  */
 int main(void)
