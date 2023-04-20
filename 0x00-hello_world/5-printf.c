@@ -1,5 +1,6 @@
 /*
  * Author: Salma
+ *
  * This is a program to print a sentence
  */
 
@@ -8,6 +9,7 @@
 /**
  * main : Used to print "with proper grammar, but the outcome is
  *                a piece of art," followed by a new line.
+ *
  *
  * Return: Should always return 0.
  */
