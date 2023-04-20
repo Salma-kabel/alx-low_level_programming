@@ -7,12 +7,9 @@
 #include <stdio.h>
 
 /**
- * main : Used to print "with proper grammar, but the outcome is
+ * main - Prints "with proper grammar, but the outcome is
  *                a piece of art," followed by a new line.
- *
- *
- *  * main : Used to print "with proper grammar, but the outcome is
- *                a piece of art," followed by a new line.
+ * 
  * Return: Should always return 0.
  */
 
