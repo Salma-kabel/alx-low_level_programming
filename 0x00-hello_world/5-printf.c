@@ -1,5 +1,6 @@
 /*
  * Author: Salma
+ * This is a program to print a sentence
  */
 
 #include <stdio.h>
