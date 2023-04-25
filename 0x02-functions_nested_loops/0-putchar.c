@@ -1,4 +1,4 @@
-#include <stdio.h1>
+#include "main.h"
 
 /*
  * main - prints _putchar followed by a new line.
@@ -8,6 +8,6 @@
 
 int main(void)
 {
-	printf ("_putchar\n");
+	write(1, "_putchar\n", strlen("_putchar")+ 1);
 	return (0);
 }
