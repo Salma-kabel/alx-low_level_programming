@@ -20,7 +20,7 @@ int print_last_digit(int n)
 	}
 	else if (v < 0)
 	{
-		char c = v + 48;
+		char c = 48 - v;
 		_putchar(c);
 		return (-v);
 	}
