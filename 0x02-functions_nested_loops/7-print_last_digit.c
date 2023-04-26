@@ -14,14 +14,20 @@ int print_last_digit(int n)
 
 	if (v > 0)
 	{
+		char c = v + 48;
+		_putchar(c);
 		return (v);
 	}
 	else if (v < 0)
 	{
+		char c = v + 48;
+		_putchar(c);
 		return (-v);
 	}
 	else
 	{
+		char c = v + 48;
+		_putchar(c);
 		return (0);
 	}
 }
