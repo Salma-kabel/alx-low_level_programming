@@ -19,35 +19,38 @@ void jack_bauer(void)
 				_putchar('0');
 				_putchar(i + 48);
 				_putchar(':');
-				if (j < 10)
-				{
-					_putchar('0');
-					_putchar(j + 48);
-				}
-				else
-				{
-					_putchar((j / 10) + 48);
-					_putchar((j % 10) + 48);
-				}
+				printj(j);
 			}
 			else
 			{
 				_putchar((i / 10) + 48);
 				_putchar((i % 10) + 48);
 				_putchar(':');
-				if (i < 10)
-				{
-					_putchar('0');
-					_putchar(j + 48);
-				}
-				else
-				{
-					_putchar((j / 10) + 48);
-					_putchar((j % 10) + 48);
-				}
+				printj(j);
 			}
 			write(1, "\n", 1);
 		}
+	}
+}
+
+/**
+ * printj - prints the minutes.
+ *
+ * @j: represents the minutes.
+ *
+ */
+
+void printj(int j)
+{
+	if (j < 10)
+	{
+		_putchar('0');
+		_putchar(j + 48);
+	}
+	else
+	{
+		_putchar((j / 10) + 48);
+		_putchar((j % 10) + 48);
 	}
 }
 
