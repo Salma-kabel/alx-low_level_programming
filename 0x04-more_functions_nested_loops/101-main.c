@@ -11,7 +11,7 @@ int main(void)
     _putchar('\n');
     print_number(-99);
     _putchar('\n');
-    print_number(-10);
+    print_number(123456789);
     _putchar('\n');
     print_number(0);
     _putchar('\n');
