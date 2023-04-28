@@ -13,10 +13,6 @@ void print_number(int n)
 	int i, j;
 	int count = 0;
 
-	if (n < 0)
-	{
-		_putchar(45);
-	}
 	while (m != 0)
 	{
 		count++;
