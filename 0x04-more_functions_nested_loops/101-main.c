@@ -7,13 +7,13 @@
  */
 int main(void)
 {
-    print_number(-1);
+    print_number(2147483647);
     _putchar('\n');
-    print_number(-99);
+    print_number(3);
     _putchar('\n');
-    print_number(123456789);
+    print_number(-4096);
     _putchar('\n');
-    print_number(0);
+    print_number(-20);
     _putchar('\n');
     print_number(-98);
     _putchar('\n');
