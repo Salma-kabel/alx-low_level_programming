@@ -11,4 +11,4 @@ void print_diagonal(int n);
 void print_square(int size);
 void print_triangle(int size);
 void print_number(int n);
-void print(int count, int mul, int n, int i);
+void print(int count, int mul, int n, int i, int k);
