@@ -16,7 +16,7 @@ int main(void)
 		cn = n + pn;
 		pn = n;
 		n = cn;
-		if ( i != 49)
+		if (i != 49)
 		{
 			printf("%ld, ", cn);
 		}
