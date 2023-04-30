@@ -5,6 +5,7 @@
  *  below 1024 (excluded), followed by a new line.
  *
  *  Return: 0 Always.
+ */
 
 int main(void)
 {
