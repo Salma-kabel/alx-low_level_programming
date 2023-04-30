@@ -18,7 +18,7 @@ int main(void)
 		n = cn;
 		if (cn < 4000000)
 		{
-			if ( cn % 2 == 0)
+			if (cn % 2 == 0)
 			{
 				sum = sum + cn;
 			}
@@ -28,6 +28,7 @@ int main(void)
 			break;
 		}
 	}
+	printf("%ld\n");
 	return (0);
 }
 
