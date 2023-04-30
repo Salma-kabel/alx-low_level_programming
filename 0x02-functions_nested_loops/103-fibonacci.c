@@ -28,7 +28,7 @@ int main(void)
 			break;
 		}
 	}
-	printf("%ld\n");
+	printf("%ld\n", sum);
 	return (0);
 }
 
