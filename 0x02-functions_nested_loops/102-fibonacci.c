@@ -9,16 +9,22 @@
 
 int main(void)
 {
-	int i,n = 1, pn = 0, cn;
+	long int i, n = 1, pn = 0, cn;
 
-	for (i = 0; i < 49; i++)
+	for (i = 0; i < 50; i++)
 	{
 		cn = n + pn;
 		pn = n;
 		n = cn;
-		printf(", %d", cn);
+		if ( i != 49)
+		{
+			printf("%d, ", cn);
+		}
+		else
+		{
+			printf("\n");
+		}
 	}
-	printf("\n");
 	return (0);
 }
 
