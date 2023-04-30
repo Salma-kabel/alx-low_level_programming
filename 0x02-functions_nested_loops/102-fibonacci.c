@@ -18,11 +18,11 @@ int main(void)
 		n = cn;
 		if ( i != 49)
 		{
-			printf("%d, ", cn);
+			printf("%ld, ", cn);
 		}
 		else
 		{
-			printf("\n");
+			printf("%ld\n", cn);
 		}
 	}
 	return (0);
