@@ -9,7 +9,7 @@
 
 int main(void)
 {
-	long int i, n = 1, pn = 0, cn;
+	unsigned long int i, n = 1, pn = 0, cn;
 
 	for (i = 0; i < 98; i++)
 	{
