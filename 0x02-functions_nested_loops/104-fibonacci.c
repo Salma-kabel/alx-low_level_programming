@@ -11,7 +11,7 @@ int main(void)
 {
 	int i, n = 1, pn = 0, cn;
 
-	for (i = 0, i < 98, i++)
+	for (i = 0; i < 98; i++)
 	{
 		cn = n + pn;
 		pn = n;
