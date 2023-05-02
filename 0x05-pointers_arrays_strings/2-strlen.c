@@ -6,6 +6,7 @@
  * @s: string
  *
  * Return : length of s.
+ */
 
 int _strlen(char *s)
 {
