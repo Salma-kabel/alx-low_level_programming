@@ -50,5 +50,6 @@ int main(void)
             printf("%c", password[i]);
         }
 }
+printf("%s\n",password);
 return (0);
 }
