@@ -57,7 +57,7 @@ int _atoi(char *s)
  * @i: number
  *@num: number
  */
-void itoi(int i, int num, unsigned int n)
+void itoi(int i, int num, int n)
 {
 	if (i == 0)
 	{

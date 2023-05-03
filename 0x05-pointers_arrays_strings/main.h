@@ -10,4 +10,5 @@ void puts_half(char *str);
 void print_array(int *a, int n);
 char *_strcpy(char *dest, char *src);
 int _atoi(char *s);
-void itoi(int i, int num, unsigned int n);
+void itoi(int i, int num, int n);
+
