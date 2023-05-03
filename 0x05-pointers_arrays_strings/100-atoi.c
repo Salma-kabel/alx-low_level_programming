@@ -19,6 +19,10 @@ int _atoi(char *s)
 		{
 			n = -1;
 		}
+		else if (if (s[i] == '-' && s[i + 1] > 47 && s[i + 1] < 58))
+		{
+			n = 1;
+		}
 		else if (s[i] > 47 && s[i] < 58)
 		{
 			if (count == 0)
@@ -26,6 +30,10 @@ int _atoi(char *s)
 				b = i;
 			}
 			count++;
+		}
+		else if (s[i - 1] > 47 && s[i - 1] < 58 && !(s[i] > 47 && s[i] < 58))
+		{
+			break;
 		}
 	}
 	for (i = count - 1; i >= 0; i--)
