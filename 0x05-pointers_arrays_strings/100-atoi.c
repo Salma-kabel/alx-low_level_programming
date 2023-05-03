@@ -53,9 +53,11 @@ int _atoi(char *s)
 /**
  * itoi - Convert a string to an integer.
  *
- *
+ * @n:number
  * @i: number
- *@num: number
+ * @num: number
+ *
+ * Return: number
  */
 int itoi(int num, int i, int n)
 {
