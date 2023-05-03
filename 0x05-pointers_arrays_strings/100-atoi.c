@@ -43,9 +43,11 @@ int _atoi(char *s)
 			num = n * 2147483647 - 1;
 			break;
 		}
-		num = num + (s[b + i] - 48) * mul;
-		mul = mul * 10;
-		itoi(i, num, n);
+		itoi(b, num, mul, s, i);
+		if (i == 0)
+		{
+			num = num * n;
+		}
 	}
 	return (num);
 }
@@ -57,10 +59,8 @@ int _atoi(char *s)
  * @i: number
  *@num: number
  */
-void itoi(int i, int num, int n)
+void itoi(int b, int num,unsigned int mul, char *s, int i)
 {
-	if (i == 0)
-	{
-		num = num * n;
-	}
+	num = num + (s[b + i] - 48) * mul;
+	mul = mul * 10;
 }
