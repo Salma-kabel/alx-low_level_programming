@@ -40,8 +40,7 @@ int _atoi(char *s)
 	{
 		if (num + (s[b + i] - 48) * mul > 2147483647)
 		{
-			num = n * 2147483647 - 1;
-			break;
+			num = n * 2147483647 - 1;break;
 		}
 		num = num + (s[b + i] - 48) * mul;
 		mul = mul * 10;
@@ -52,3 +51,4 @@ int _atoi(char *s)
 	}
 	return (num);
 }
+
