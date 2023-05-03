@@ -61,4 +61,4 @@ int _atoi(char *s)
  *@num: number
  *)
 {
-}
+}*/
