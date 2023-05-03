@@ -45,18 +45,19 @@ int _atoi(char *s)
 		}
 		num = num + (s[b + i] - 48) * mul;
 		mul = mul * 10;
-		i(i, num);
+		itoi(i, num, n);
 	}
 	return (num);
 }
 
 /**
- * i - Convert a string to an integer.
+ * itoi - Convert a string to an integer.
+ *
  *
  * @i: number
  *@num: number
  */
-void i(int i, int num)
+void itoi(int i, int num, unsigned int n)
 {
 	if (i == 0)
 	{
