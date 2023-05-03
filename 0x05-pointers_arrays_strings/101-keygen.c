@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <time.h>
   
-void randomPasswordGeneration(int N)
+void randomPasswordGeneration(void)
 {
     
     int i = 0;
