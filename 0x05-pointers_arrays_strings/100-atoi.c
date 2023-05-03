@@ -59,7 +59,6 @@ int _atoi(char *s)
  *
  * @i: number
  *@num: number
- */
-void itoi(int b, int num,unsigned int mul, char *s, int i)
+ *)
 {
 }
