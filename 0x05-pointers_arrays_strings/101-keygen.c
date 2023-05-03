@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <time.h>
   
-void randomPasswordGeneration(void)
+int main(void)
 {
     
     int i = 0;
@@ -50,4 +50,5 @@ void randomPasswordGeneration(void)
             printf("%c", password[i]);
         }
 }
+return (0);
 }
