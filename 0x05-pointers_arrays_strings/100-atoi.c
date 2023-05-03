@@ -19,7 +19,7 @@ int _atoi(char *s)
 		{
 			n = -1;
 		}
-		else if (if (s[i] == '-' && s[i + 1] > 47 && s[i + 1] < 58))
+		else if (s[i] == '-' && s[i + 1] > 47 && s[i + 1] < 58)
 		{
 			n = 1;
 		}
