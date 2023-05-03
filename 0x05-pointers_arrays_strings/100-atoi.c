@@ -40,15 +40,26 @@ int _atoi(char *s)
 	{
 		if (num + (s[b + i] - 48) * mul > 2147483647)
 		{
-			num = n * 2147483647 - 1;break;
+			num = n * 2147483647 - 1;
+			break;
 		}
 		num = num + (s[b + i] - 48) * mul;
 		mul = mul * 10;
-		if (i == 0)
-		{
-			num = num * n;
-		}
+		i(i, num);
 	}
 	return (num);
 }
 
+/**
+ * i - Convert a string to an integer.
+ *
+ * @i: number
+ *@num: number
+ */
+void i(int i, int num)
+{
+	if (i == 0)
+	{
+		num = num * n;
+	}
+}
