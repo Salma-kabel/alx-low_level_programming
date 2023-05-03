@@ -22,12 +22,12 @@ int main(void)
     char symbols[] = "!@#$^&*?";
   
     
-    char password[10];
+    char password[84];
    srand((unsigned int)(time(NULL)));  
     
     randomizer = rand() % 4;
   
-    for (i = 0; i < 10; i++) {
+    for (i = 0; i < 84; i++) {
   
         if (randomizer == 1) {
             password[i] = numbers[rand() % 10];
