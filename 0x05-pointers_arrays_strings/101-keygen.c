@@ -10,10 +10,6 @@ void randomPasswordGeneration(void)
     int i = 0;
   
     int randomizer = 0;
-  
-    
-    srand((unsigned int)(time(NULL)));
-  
     
     char numbers[] = "0123456789";
   
@@ -27,7 +23,7 @@ void randomPasswordGeneration(void)
   
     
     char password[10];
-  
+   srand((unsigned int)(time(NULL)));  
     
     randomizer = rand() % 4;
   
