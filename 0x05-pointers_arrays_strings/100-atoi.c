@@ -29,7 +29,7 @@ int _atoi(char *s)
 	}
 	for (i = count - 1; i >= 0; i--)
 	{
-		num = num + s[b + i] * mul;
+		num = num + (s[b + i] - 48) * mul;
 		mul = mul * 10;
 	}
 	num = num * n;
