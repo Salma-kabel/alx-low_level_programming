@@ -38,6 +38,11 @@ int _atoi(char *s)
 	}
 	for (i = count - 1; i >= 0; i--)
 	{
+		if (num + (s[b + i] - 48) * mul > 2147483647)
+		{
+			num = n * 2147483647 - 1;
+			break;
+		}
 		num = num + (s[b + i] - 48) * mul;
 		mul = mul * 10;
 	}
