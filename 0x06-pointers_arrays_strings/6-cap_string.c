@@ -35,7 +35,7 @@ char *cap_string(char *str)
 				str[i + 1] = str[i + 1] - 32;
 			}
 		}
-		else if (str[i] == '}')
+		else if (str[i] == '}' || i == 0)
 		{
 			if (str[i + 1] >= 97 && str[i + 1] <= 122)
 			{
