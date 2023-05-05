@@ -32,7 +32,7 @@ char *cap_string(char *str)
 			{
 				str[i] = str[i] - 32;
 			}
-			else if (str[i - 1] == '{')
+			else if (str[i - 1] == '{' || i == 0)
 			{
 				str[i] = str[i] - 32;
 			}
