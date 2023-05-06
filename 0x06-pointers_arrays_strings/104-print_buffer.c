@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 #include <stdlib.h>
 #include "main.h"
 /**
@@ -9,7 +10,7 @@
 */
 void print_buffer(char *b, int size)
 {
-	int i, j, r;
+	int i, j, r, k;
 
 	if (size <= 0)
 	{
@@ -35,11 +36,11 @@ void print_buffer(char *b, int size)
 				{
 					r = (i + 1) % 10;
 					j = i + 1 - r;
-					while (11 - r)
-					{
-						printf("  ");
-						r++;
-					}
+					if (r > 0)
+						for (k = 0; k < ((20 - r * 2) + (10 - r) / 2); k++)
+						{
+							printf(" ");
+						}
 				}
 				else
 				{
