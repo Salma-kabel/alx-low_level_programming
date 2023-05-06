@@ -23,30 +23,28 @@ void print_buffer(char *b, int size)
 				printf(" ");
 			printf("%02x", b[i]);
 			if ((i % 10 == 9 && i > 0) || i + 1 == size)
+			{
 				if ((i + 1) % 10 != 0)
+				{
 					r = (i + 1) % 10;
 					j = i + 1 - r;
 					if (r > 0)
 					{
 						for (k = 0; k < ((20 - r * 2) + (10 - r) / 2); k++)
-						{
 							printf(" ");
-						}
 					}
+				}
 				else
 					j = i - 9;
 				printf(" ");
 				for (; j < i + 1 && j < size; j++)
 				{
 					if (!(b[j] > 31 && b[j] < 127))
-					{
 						printf(".");
-					}
 					else
-					{
 						printf("%c", b[j]);
-					}
 				}
 				printf("\n");
+			}
 		}
 }
