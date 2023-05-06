@@ -30,8 +30,10 @@ void print_buffer(char *b, int size)
 					j = i + 1 - r;
 					if (r > 0)
 					{
-						for (k = 0; k < ((20 - r * 2) + (10 - r) / 2); k++)
-							printf(" ");
+					for (k = 0; k < ((20 - r * 2) + (10 - r) / 2); k++)
+						{
+						printf(" ");
+						}
 					}
 				}
 				else
