@@ -9,7 +9,7 @@
  * @r: buffer
  * @size_r: size of buffer
  *
- * Return : pointer to buffer
+ * Return: pointer to buffer
  */
 
 
