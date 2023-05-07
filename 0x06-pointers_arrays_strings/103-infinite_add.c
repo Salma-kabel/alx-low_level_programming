@@ -1,6 +1,17 @@
 #include "main.h"
 #include <stdio.h>
 
+/**
+ * *infinite_add - Adds two numbers.
+ *
+ * @n1: first number
+ * @n2: second number
+ * @r: buffer
+ * @size_r: size of buffer
+ *
+ * Return : pointer to buffer
+ */
+
 
 
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
@@ -8,6 +19,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	int i, c , b1, b2;
 	char *v;
 
+	size_r = size_r - 1;
 	for (i = 0; n1[i] != '\0'; i++)
 	{
 		if (n1[i + 1] == '\0')
@@ -45,7 +57,18 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	return (v);
 }
 
-
+/**
+ *  *add - Adds two numbers
+ *
+ *  @n1: first number
+ *  @n2: second number
+ *  @r: buffer
+ *  @size_r: size of buffer
+ *  @b1: size of first number
+ *  @b2: size of second number
+ *
+ *  Return: pointer to buffer
+ */
 
 char *add(char *n1, char *n2, char *r, int size_r, int b1, int b2)
 {
