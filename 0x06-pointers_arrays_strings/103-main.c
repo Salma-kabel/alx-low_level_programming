@@ -24,7 +24,7 @@ int main(void)
         {
                 printf("%s + %s = %s\n", n, m, res);
         }
-        n = "498";
+        n = "111498";
         m = "142";
         res = infinite_add(n, m, r2, 10);
         if (res == 0)

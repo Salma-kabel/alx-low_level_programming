@@ -6,7 +6,6 @@
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
 	int i, c , b1, b2;
-	char f = '0';
 	char *v;
 
 	for (i = 0; n1[i] != '\0'; i++)
@@ -37,18 +36,18 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	}
 	if (c == 1 || c == 0)
 	{
-		v = add(n1, n2, r, size_r, b1, b2, f);
+		v = add(n1, n2, r, size_r, b1, b2);
 	}
 	else
 	{
-		v = add(n2, n1, r, size_r, b2, b1, f);
+		v = add(n2, n1, r, size_r, b2, b1);
 	}
 	return (v);
 }
 
 
 
-char *add(char *n1, char *n2, char *r, int size_r, int b1, int b2, char c)
+char *add(char *n1, char *n2, char *r, int size_r, int b1, int b2)
 {
 	int i, j, rem = 0, k;
 
@@ -56,11 +55,9 @@ char *add(char *n1, char *n2, char *r, int size_r, int b1, int b2, char c)
 	{
 		if (b1 != b2)
 		{
-			if (size_r - (i + 1) < 0)
+			if (size_r - (i + 1) <  0)
 			{
-				char *cp;
-				cp = &c;
-				return (cp);
+				return (0);
 			}
 			if (((n1[b1 - i] - 48) + (n2[b2 - i] - 48) + rem) > 9)
 			{
@@ -77,11 +74,9 @@ char *add(char *n1, char *n2, char *r, int size_r, int b1, int b2, char c)
 			{
 				for (j = i + 1; j <= b1; j++)
 				{
-					if (size_r - j == 0)
+					if (size_r - (j + 1) < 0)
 					{
-						char *cp;
-						cp = &c;
-						return (cp);
+						return (0);
 					}
 					if (((n1[b1 - j] - 48) + rem) > 9)
 					{
@@ -98,11 +93,9 @@ char *add(char *n1, char *n2, char *r, int size_r, int b1, int b2, char c)
 					{
 						if (rem > 0)
 						{
-							if (size_r - (j + 1) - 1 < 0)
+							if (size_r - (j + 2) < 0)
 							{
-								char *cp;
-								cp = &c;
-								return (cp);
+								return (0);
 							}
 							else
 							{
@@ -119,9 +112,7 @@ char *add(char *n1, char *n2, char *r, int size_r, int b1, int b2, char c)
 		{
 			if (size_r - (i + 1) < 0)
 			{
-				char *cp;
-				cp = &c;
-				return (cp);
+				return (0);
 			}
 			if (((n1[b1 - i] - 48) + (n2[b2 - i] - 48) + rem) > 9)
 			{
@@ -138,11 +129,9 @@ char *add(char *n1, char *n2, char *r, int size_r, int b1, int b2, char c)
 			{
 				if (rem > 0)
 				{
-					if (size_r - (i + 1) - 1 < 0)
+					if (size_r - (i + 2) < 0)
 					{
-						char *cp;
-						cp = &c;
-						return (cp);
+						return (0);
 					}
 					else
 					{
