@@ -5,92 +5,160 @@
 
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int i, c;
-	char *f;
+	int i, c , b1, b2;
+	char f = '0';
+	char *v;
 
 	for (i = 0; n1[i] != '\0'; i++)
 	{
-		if (n2[i] == '\0')
+		if (n1[i + 1] == '\0')
 		{
-			c = 1;
-		}
-		else if (n1[i + 1] == '\0')
-		{
-			if (n2[i + 1] == '\0')
-			{
-				c = 0;
-			}
-			else
-			{
-				c = 2;
-			}
+			b1 = i;
 		}
 	}
-	if (c == 1 || c == 0)
+	for(i = 0; n2[i] != '\0'; i++)
 	{
-		f = add(n1, n2, r, size_r, c);
+		if (n2[i + 1] == '\0')
+		{
+			b2 = i;
+		}
+	}
+	if (b1 > b2 )
+	{
+		c = 1;
+	}
+	else if (b2 > b1)
+	{
+		c = 2;
 	}
 	else
 	{
-		f = add(n2, n1, r, size_r, c);
+		c = 0;
 	}
-	return (f);
+	if (c == 1 || c == 0)
+	{
+		v = add(n1, n2, r, size_r, b1, b2, f);
+	}
+	else
+	{
+		v = add(n2, n1, r, size_r, b2, b1, f);
+	}
+	return (v);
 }
 
 
 
-char *add(char *n1, char *n2, char *r, int size_r, int c)
+char *add(char *n1, char *n2, char *r, int size_r, int b1, int b2, char c)
 {
-	int i, rem = 0, j;
-	for (i = 0; n1[i] != '\0'; i++)
+	int i, j, rem = 0, k;
+
+	for (i = 0; i <= b1; i++)
 	{
-		if (i == size_r)
+		if (b1 != b2)
 		{
-			r[0] = '0';
-			r[1] = '\0';
-			break;
-		}
-		if (((n1[i] - 48) + (n2[i] - 48) + rem) > 9)
-		{
-			r[i] = (((n1[i] - 48) + (n2[i] - 48) + rem) % 10) + 48;
-			rem = ((n1[i] - 48) + (n2[i] - 48) + rem) / 10;
+			if (size_r - (i + 1) < 0)
+			{
+				char *cp;
+				cp = &c;
+				return (cp);
+			}
+			if (((n1[b1 - i] - 48) + (n2[b2 - i] - 48) + rem) > 9)
+			{
+				r[size_r - (i + 1)] = (((n1[b1 - i] - 48) + (n2[b2 - i] - 48) + rem) % 10) + 48;
+				rem = ((n1[b1 - i] - 48) + (n2[b2 - i] - 48) + rem) / 10;
+			}
+			else
+			{
+				r[size_r - (i + 1)] = ((n1[b1 - i] - 48) + (n2[b2 - i] - 48) + rem) + 48;
+				rem = 0;
+			}
+			k = size_r - (i + 1);
+			if (b2 - (i + 1) < 0)
+			{
+				for (j = i + 1; j <= b1; j++)
+				{
+					if (size_r - j == 0)
+					{
+						char *cp;
+						cp = &c;
+						return (cp);
+					}
+					if (((n1[b1 - j] - 48) + rem) > 9)
+					{
+						r[size_r - (j + 1)] = (((n1[b1 - j] - 48) + rem) % 10) + 48;
+						rem = ((n1[b1 - j] - 48) + rem) / 10;
+					}
+					else
+					{
+						r[size_r - (j + 1)] = ((n1[b1 - j] - 48) + rem) + 48;
+						rem = 0;
+					}
+					k = size_r - (j + 1);
+					if (b1 - (j + 1) < 0 )
+					{
+						if (rem > 0)
+						{
+							if (size_r - (j + 1) - 1 < 0)
+							{
+								char *cp;
+								cp = &c;
+								return (cp);
+							}
+							else
+							{
+								r[size_r - (j + 1) - 1] = rem + 48;
+								k = size_r - (j + 1) - 1;
+							}
+						}
+					}
+				}
+				break;
+			}
 		}
 		else
 		{
-			printf("n1= %d  n2= %d\n",(n1[i] - 48),(n2[i] - 48));
-			r[i] = ((n1[i] - 48) + (n2[i] - 48) + rem) + 48;
-			rem = 0;
-		}
-		if (n2[i + 1] == '\0' && (c == 1 || c == 2))
-		{
-			for (j = i + 1; n1[j] != '\0'; j++)
+			if (size_r - (i + 1) < 0)
 			{
-				if (j == size_r)
-				{
-					r[0] = '0';
-					r[1] = '\0';
-					break;
-				}
-				if ((n1[j] - 48) + rem > 9)
-				{
-					r[j] = (((n1[j] - 48) + rem) % 10) + 48;
-					rem = ((n1[j] - 48) + rem) / 10;
-				}
-				else
-				{
-					r[j] = ((n1[j] - 48) + rem) + 48;
-				}
-				if (n1[j + 1] == '\0')
-					if (rem > 0)
-						r[j + 1] = rem + 48;
+				char *cp;
+				cp = &c;
+				return (cp);
 			}
-			break;
+			if (((n1[b1 - i] - 48) + (n2[b2 - i] - 48) + rem) > 9)
+			{
+				r[size_r - (i + 1)] = (((n1[b1 - i] - 48) + (n2[b2 - i] - 48) + rem) % 10) + 48;
+				rem = ((n1[b1 - i] - 48) + (n2[b2 - i] - 48) + rem) / 10;
+			}
+			else
+			{
+				r[size_r - (i + 1)] = ((n1[b1 - i] - 48) + (n2[b2 - i] - 48) + rem) + 48;
+				rem = 0;
+			}
+			k = size_r - (i + 1);
+			if (b1 - (i + 1) < 0 )
+			{
+				if (rem > 0)
+				{
+					if (size_r - (i + 1) - 1 < 0)
+					{
+						char *cp;
+						cp = &c;
+						return (cp);
+					}
+					else
+					{
+						r[size_r - (i + 1) - 1] = rem + 48;
+						k = size_r - (i + 1) - 1;
+					}
+				}
+			}
 		}
-		if (n1[i + 1] == '\0')
+	}
+	if (k > 0)
+	{
+		for (i =0; i< size_r - k;i++)
 		{
-			if (rem > 0)
-				r[i + 1] = rem + 48;
-			break;
+			r[i] = r[k + i];
+			r[k + i] = 0;
 		}
 	}
 	return (r);

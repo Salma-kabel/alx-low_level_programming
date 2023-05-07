@@ -24,8 +24,8 @@ int main(void)
         {
                 printf("%s + %s = %s\n", n, m, res);
         }
-        n = "8";
-        m = "12";
+        n = "498";
+        m = "142";
         res = infinite_add(n, m, r2, 10);
         if (res == 0)
         {

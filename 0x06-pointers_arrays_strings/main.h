@@ -12,5 +12,5 @@ int _putchar(char c);
 char *infinite_add(char *n1, char *n2, char *r, int size_r);
 void print(int count, int mul, int n, int i, int k);
 void print_buffer(char *b, int size);
-char *add(char *n1, char *n2, char *r, int size_r, int c);
+char *add(char *n1, char *n2, char *r, int size_r, int b1, int b2, char c);
 
