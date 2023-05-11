@@ -10,11 +10,11 @@
 
 int _sqrt_recursion(int n)
 {
-	return (num2(n, 1, 0));	
+	return (num2(n, 1, 0));
 }
 
 /**
- * _sqrt_recursion - Returns the natural square root of a number.
+ * num2 - Returns the natural square root of a number.
  *
  * @n: number
  * @i: number
@@ -35,7 +35,7 @@ int num2(int n, int i, int count)
 	}
 	else
 	{
-		if (num2(n - i, i - 2, count) > 0)
+		if (num2(n - i, i + 2, count) > 0)
 		{
 			count++;
 			return (count);
