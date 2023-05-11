@@ -35,11 +35,7 @@ int num2(int n, int i, int count)
 	}
 	else
 	{
-		if (num2(n - i, i + 2, count) < 0)
-		{
-			return (-1);
-		}
-		else
+		
 		{
 			return (num2(n - i, i + 2, count) + 1);
 		}
