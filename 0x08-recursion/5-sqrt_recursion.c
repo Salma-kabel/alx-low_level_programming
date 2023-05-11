@@ -25,6 +25,7 @@ int _sqrt_recursion(int n)
 
 int num2(int n, int i, int count)
 {
+	int m;
 	if (n - i == 0)
 	{
 		return (1);
@@ -35,9 +36,14 @@ int num2(int n, int i, int count)
 	}
 	else
 	{
-		
+		m = num2(n - i, i + 2, count);
+		if (m > 0)
 		{
-			return (num2(n - i, i + 2, count) + 1);
+			return (m + 1);
+		}
+		else
+		{
+			return (-1);
 		}
 	}
 }
