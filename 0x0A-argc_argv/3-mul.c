@@ -9,7 +9,7 @@
  * Return: 0 if 2 arguments, 1 otherwise
  */
 
-int main(int argc, char *argv)
+int main(int argc, char *argv[])
 {
 	if (argc != 3)
 	{
@@ -18,7 +18,7 @@ int main(int argc, char *argv)
 	}
 	else
 	{
-		printf("%d\n", argv[1] * argv[2]);
+		printf("%d\n", (*argv[1] - 48) * (*argv[2] - 48));
 		return (0);
 	}
 }
