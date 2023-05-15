@@ -21,15 +21,15 @@ char *str_concat(char *s1, char *s2)
 	}
 	else if (s1 == NULL)
 	{
-		arr = malloc(sizeof(strlen(s2)) + 1);
+		arr = malloc(sizeof(strlen(s2)) + 4);
 	}
 	else if (s2 == NULL)
 	{
-		arr = malloc(sizeof(strlen(s1)) + 1);
+		arr = malloc(sizeof(strlen(s1)) + 4);
 	}
 	else
 	{
-		arr = malloc(sizeof(strlen(s1) + strlen(s2)) + 1);
+		arr = malloc(sizeof(strlen(s1) + strlen(s2)) + 4);
 	}
 	if (arr == NULL)
 	{
