@@ -17,7 +17,7 @@ char *str_concat(char *s1, char *s2)
 
 	if (s1 == NULL && s2 == NULL)
 	{
-		return (NULL);
+		 arr = malloc(0);
 	}
 	else if (s1 == NULL)
 	{
@@ -35,11 +35,11 @@ char *str_concat(char *s1, char *s2)
 	{
 		return (NULL);
 	}
-	for (i = 0; s1[i] != '\0'; i++)
+	for (i = 0; s1[i] != '\0' && s1 != NULL; i++)
 	{
 		arr[i] = s1[i];
 	}
-	for (j = 0; s2[j] != '\0'; j++)
+	for (j = 0; s2[j] != '\0' && s2 != NULL; j++)
 	{
 		arr[i] = s2[j];
 		i++;
