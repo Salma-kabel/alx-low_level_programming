@@ -17,7 +17,7 @@ char *str_concat(char *s1, char *s2)
 
 	if (s1 == NULL && s2 == NULL)
 	{
-		 arr = malloc(0);
+		arr = malloc(0);
 	}
 	else if (s1 == NULL)
 	{
@@ -35,7 +35,6 @@ char *str_concat(char *s1, char *s2)
 	{
 		return (NULL);
 	}
-	printf("here\n");
 	for (i = 0; s1 != NULL && s1[i] != '\0'; i++)
 	{
 		arr[i] = s1[i];
