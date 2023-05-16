@@ -55,7 +55,7 @@ char **copy(char *str, int size2, char **arr)
 			if (str[j] >= 33 && str[j] <= 126)
 			{
 				size++;
-				if (str[j + 1] == 32)
+				if (str[j + 1] == 32 || str[j + 1] == '\0')
 					break;
 			}
 		}
@@ -73,7 +73,7 @@ char **copy(char *str, int size2, char **arr)
 			return (NULL);
 		}
 		l = 0;
-		for (; k <= j; k++)
+		for (; k < j; k++)
 		{
 			if (str[k] >= 33 && str[k] <= 126)
 			{
