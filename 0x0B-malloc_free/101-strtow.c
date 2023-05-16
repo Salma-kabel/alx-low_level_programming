@@ -20,6 +20,10 @@ char **strtow(char *str)
 		if (str[i] > 32 && str[i] <= 126 && (str[i + 1] == 32 || str[i + 1] == '\0'))
 			size2++;
 	}
+	if (size2 == 0)
+	{
+		return (NULL);
+	}
 	size2++;
 	arr = malloc(sizeof(char *) * size2);
 	if (arr == NULL)
