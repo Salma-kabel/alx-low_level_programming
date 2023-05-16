@@ -1,3 +1,6 @@
+#ifndef MAIN_H
+#define MAIN_H
+
 #include <unistd.h>
 #include <string.h>
 #include <stdio.h>
@@ -25,3 +28,4 @@ unsigned int _strspn(char *s, char *accept);
 char *_strpbrk(char *s, char *accept);
 char *_strstr(char *haystack, char *needle);
 int itoi(int num, int i, int n);
+#endif /* MAIN_H */
