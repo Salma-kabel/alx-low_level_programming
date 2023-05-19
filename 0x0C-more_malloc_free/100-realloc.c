@@ -17,7 +17,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	void *arr;
 	unsigned int i, j;
 
-if (ptr == NULL)
+	if (ptr == NULL)
 	{
 		arr = malloc(new_size);
 		return (arr);
@@ -42,7 +42,7 @@ if (ptr == NULL)
 		j = old_size;
 	for (i = 0; i < j; i++)
 	{
-		*((char *)arr + i) = *((char*)ptr + i);
+		*((char *)arr + i) = *((char *)ptr + i);
 	}
 	free(ptr);
 	return (arr);
