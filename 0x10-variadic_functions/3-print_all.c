@@ -46,6 +46,7 @@ void print_all(const char * const format, ...)
 		print(n, format[i + 1]);
 		i++;
 	}
+	printf("\n");
 }
 
 /**
@@ -62,7 +63,6 @@ void print(int n, char format)
 		case 0:
 			if (format == '\0')
 			{
-				printf("\n");
 				break;
 			}
 			printf(", ");
