@@ -8,7 +8,8 @@
 
 size_t print_list(const list_t *h)
 {
-	int i, length = 0;
+	int i;
+	list_t length = 0;
 
 	for (i = 0; h != NULL; i++)
 	{
