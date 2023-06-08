@@ -4,13 +4,13 @@
  * binary_to_uint - Converts a binary number to an unsigned int.
  * @b: string of 0 and 1;
  * Return: converted number
- */ 
+ */
 
 unsigned int binary_to_uint(const char *b)
 {
 	unsigned int i, j, num = 0, p = 1;
 
-	if (b == NULL || strlen(b) == 0)
+	if (b == NULL)
 		return (0);
 
 	for (i = 0; i < strlen(b); i++)
