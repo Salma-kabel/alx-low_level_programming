@@ -18,7 +18,7 @@ unsigned int binary_to_uint(const char *b)
 		if (!(b[i] >= 48 && b[i] <= 49))
 			return (0);
 		x = 1;
-		j = i;
+		j = strlen(b) - (i + 1);
 		while (j != 0)
 		{
 			x = x * 2;
