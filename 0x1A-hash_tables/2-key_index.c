@@ -3,6 +3,7 @@
 /**
  * key_index - gives the index of a key.
  * @size: size of array of hash table
+ * @key: key to find index for
  * Return: the index of key
  */
 
