@@ -53,7 +53,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	if (cpykey == NULL)
 		return (0);
 	idx = key_index((const unsigned char *)key, ht->size);
-	ptr = ht->shead;
+	ptr = ht->array[idx];
 	while (ptr != NULL)
 	{
 		if (strcmp(ptr->key, cpykey) == 0)
@@ -63,7 +63,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 			free(cpykey);
 			return (1);
 		}
-		ptr = ptr->snext;
+		ptr = ptr->next;
 	}
 	ptr = malloc(sizeof(shash_node_t));
 	if (ptr == NULL)
@@ -112,6 +112,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
  * @key: key to get value for
  * Return: value for the key or null if failed
  */
+
 char *shash_table_get(const shash_table_t *ht, const char *key)
 {
 	unsigned long int idx;
@@ -131,27 +132,6 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 	}
 	return (NULL);
 }
-/*
-char *shash_table_get(const shash_table_t *ht, const char *key)
-{
-	unsigned long int idx;
-	shash_node_t *ptr;
-
-	if (ht == NULL || key == NULL || strlen(key) == 0)
-		return (NULL);
-	idx = key_index((const unsigned char *)key, ht->size);
-	if (idx >= ht->size)
-		return (NULL);
-	ptr = ht->shead;
-	while (ptr != NULL)
-	{
-		if (strcmp(ptr->key, key) == 0)
-			return (ptr->value);
-		ptr = ptr->snext;
-	}
-	return (NULL);
-}
-*/
 
 /**
  * hash_table_print - prints a hash table.
