@@ -112,7 +112,26 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
  * @key: key to get value for
  * Return: value for the key or null if failed
  */
+char *shash_table_get(const shash_table_t *ht, const char *key)
+{
+	unsigned long int idx;
+	shash_node_t *ptr;
 
+	if (ht == NULL || key == NULL || strlen(key) == 0)
+		return (NULL);
+	idx = key_index((const unsigned char *)key, ht->size);
+	if (idx >= ht->size)
+		return (NULL);
+	ptr = ht->array[idx];
+	while (ptr != NULL)
+	{
+		if (strcmp(ptr->key, key) == 0)
+			return (ptr->value);
+		ptr = ptr->next;
+	}
+	return (NULL);
+}
+/*
 char *shash_table_get(const shash_table_t *ht, const char *key)
 {
 	unsigned long int idx;
@@ -132,12 +151,13 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 	}
 	return (NULL);
 }
-
+*/
 
 /**
  * hash_table_print - prints a hash table.
  * @ht: pointer to hash table
  */
+
 void shash_table_print(const shash_table_t *ht)
 {
 	shash_node_t *ptr;
@@ -156,27 +176,9 @@ void shash_table_print(const shash_table_t *ht)
 	}
 	printf("}\n");
 }
-/*
-void shash_table_print(const shash_table_t *ht)
-{
-	shash_node_t *ptr;
 
-	if (ht == NULL)
-		return;
-	printf("{");
-	ptr = ht->shead;
-	while (ptr != NULL)
-	{
-		printf("'%s': '%s'", ptr->key, ptr->value);
-		ptr = ptr->snext;
-		if (ptr != NULL)
-			printf(", ");
-	}
-	printf("}\n");
-}
-*/
 /**
- * hash_table_print - prints a hash table in reverse order.
+ * shash_table_print_rev - prints a hash table in reverse order.
  * @ht: pointer to hash table
  */
 
