@@ -3,7 +3,7 @@
 /**
  * hash_table_get - gets a value associated with a key.
  * @ht: pointer to hash table
- * key: key to get value for
+ * @key: key to get value for
  * Return: value for the key or null if failed
  */
 
