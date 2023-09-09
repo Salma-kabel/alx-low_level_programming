@@ -8,7 +8,7 @@
 
 shash_table_t *shash_table_create(unsigned long int size)
 {
-	hash_table_t *ht;
+	shash_table_t *ht;
 	unsigned long int i = 0;
 
 	ht = malloc(sizeof(shash_table_t));
@@ -26,7 +26,7 @@ shash_table_t *shash_table_create(unsigned long int size)
 		ht->array[i] = NULL;
 	}
 	ht->shead = NULL;
-	ht->stail = NULL
+	ht->stail = NULL;
 	return (ht);
 }
 
@@ -42,7 +42,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 {
 	char *cpyvalue, *cpykey;
 	unsigned long int idx;
-	hash_node_t *ptr, *ptr2;
+	shash_node_t *ptr, *ptr2;
 
 	if (ht == NULL || key == NULL || value == NULL || strlen(key) == 0)
 		return (0);
@@ -86,7 +86,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	else if (strcmp(ht->shead->key, cpykey) > 0)
 	{
 		ptr->sprev = NULL;
-		new->snext = ht->shead;
+		ptr->snext = ht->shead;
 		ht->shead->sprev = ptr;
 		ht->shead = ptr;
 	}
@@ -116,7 +116,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 char *shash_table_get(const shash_table_t *ht, const char *key)
 {
 	unsigned long int idx;
-	hash_node_t *ptr;
+	shash_node_t *ptr;
 
 	if (ht == NULL || key == NULL || strlen(key) == 0)
 		return (NULL);
@@ -141,8 +141,7 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 
 void shash_table_print(const shash_table_t *ht)
 {
-	hash_node_t *ptr;
-	unsigned long int i, j = 0;
+	shash_node_t *ptr;
 
 	if (ht == NULL)
 		return;
@@ -154,7 +153,7 @@ void shash_table_print(const shash_table_t *ht)
 			printf("'%s': '%s'", ptr->key, ptr->value);
 		else
 			printf("'%s': '%s', ", ptr->key, ptr->value);
-		ptr = ptr->snext
+		ptr = ptr->snext;
 	}
 	printf("}\n");
 }
@@ -166,8 +165,7 @@ void shash_table_print(const shash_table_t *ht)
 
 void shash_table_print_rev(const shash_table_t *ht)
 {
-	hash_node_t *ptr;
-	unsigned long int i, j = 0;
+	shash_node_t *ptr;
 
 	if (ht == NULL)
 		return;
@@ -191,8 +189,7 @@ void shash_table_print_rev(const shash_table_t *ht)
 
 void shash_table_delete(shash_table_t *ht)
 {
-	unsigned long int i;
-	hash_node_t *ptr, *ptr2;
+	shash_node_t *ptr, *ptr2;
 
 	if (ht == NULL)
 		return;
