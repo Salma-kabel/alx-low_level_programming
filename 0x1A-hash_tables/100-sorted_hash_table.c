@@ -138,7 +138,25 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
  * hash_table_print - prints a hash table.
  * @ht: pointer to hash table
  */
+void shash_table_print(const shash_table_t *ht)
+{
+	shash_node_t *ptr;
 
+	if (ht == NULL)
+		return;
+	printf("{");
+	ptr = ht->shead;
+	while (ptr != NULL)
+	{
+		if (ptr == ht->stail)
+			printf("'%s': '%s'", ptr->key, ptr->value);
+		else
+			printf("'%s': '%s', ", ptr->key, ptr->value);
+		ptr = ptr->snext;
+	}
+	printf("}\n");
+}
+/*
 void shash_table_print(const shash_table_t *ht)
 {
 	shash_node_t *ptr;
@@ -156,11 +174,12 @@ void shash_table_print(const shash_table_t *ht)
 	}
 	printf("}\n");
 }
-
+*/
 /**
  * hash_table_print - prints a hash table in reverse order.
  * @ht: pointer to hash table
  */
+
 void shash_table_print_rev(const shash_table_t *ht)
 {
 	shash_node_t *ptr;
@@ -179,25 +198,7 @@ void shash_table_print_rev(const shash_table_t *ht)
 	}
 	printf("}\n");
 }
-/*
-void shash_table_print_rev(const shash_table_t *ht)
-{
-	shash_node_t *ptr;
 
-	if (ht == NULL)
-		return;
-	printf("{");
-	ptr = ht->stail;
-	while (ptr != NULL)
-	{
-		printf("'%s': '%s'", ptr->key, ptr->value);
-		ptr = ptr->sprev;
-		if (ptr != NULL)
-			printf(", ");
-	}
-	printf("}\n");
-}
-*/
 /**
  * hash_table_delete - deletes a hash table.
  * @ht: pointer to hash table
