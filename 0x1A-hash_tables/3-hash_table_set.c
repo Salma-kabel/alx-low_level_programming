@@ -1,52 +1,53 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_set - adds an element to the hash table.
- * @ht: pointer to hash table
- * @key: key of value
- * @value: value to add
- * Return: 1 if success 0 otherwise
+ * hash_table_set - Add or update an element in a hash table.
+ * @ht: A pointer to the hash table.
+ * @key: The key to add - cannot be an empty string.
+ * @value: The value associated with key.
+ *
+ * Return: Upon failure - 0.
+ *         Otherwise - 1.
  */
-
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	char *cpyvalue, *cpykey;
-	unsigned long int idx;
-	hash_node_t *ptr;
+	hash_node_t *new;
+	char *value_copy;
+	unsigned long int index, i;
 
-	if (ht == NULL || key == NULL || value == NULL || strlen(key) == 0)
+	if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
 		return (0);
-	cpyvalue = strdup(value);
-	if (cpyvalue == NULL)
+
+	value_copy = strdup(value);
+	if (value_copy == NULL)
 		return (0);
-	cpykey = strdup(key);
-	if (cpykey == NULL)
-		return (0);
-	idx = key_index((const unsigned char *)key, ht->size);
-	ptr = ht->array[idx];
-	while (ptr != NULL)
+
+	index = key_index((const unsigned char *)key, ht->size);
+	for (i = index; ht->array[i]; i++)
 	{
-		if (strcmp(ptr->key, cpykey) == 0)
+		if (strcmp(ht->array[i]->key, key) == 0)
 		{
-			free(ptr->value);
-			ptr->value = cpyvalue;
-			free(cpyvalue);
-			free(cpykey);
+			free(ht->array[i]->value);
+			ht->array[i]->value = value_copy;
 			return (1);
 		}
 	}
-	ptr = malloc(sizeof(hash_node_t));
-	if (ptr != NULL)
+
+	new = malloc(sizeof(hash_node_t));
+	if (new == NULL)
 	{
-		ptr->key = cpykey;
-		ptr->value = cpyvalue;
-		ptr->next = ht->array[idx];
-		ht->array[idx] = ptr;
-		free(cpyvalue);
-		free(cpykey);
-		return (1);
+		free(value_copy);
+		return (0);
 	}
-	free(cpyvalue);
-	free(cpykey);
-	return (0);
+	new->key = strdup(key);
+	if (new->key == NULL)
+	{
+		free(new);
+		return (0);
+	}
+	new->value = value_copy;
+	new->next = ht->array[index];
+	ht->array[index] = new;
+
+	return (1);
 }
