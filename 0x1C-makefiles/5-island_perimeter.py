@@ -3,7 +3,8 @@
 
 
 def island_perimeter(grid):
-    """Grid cells are connected horizontally/vertically (not diagonally)."""
+    """Grid cells are connected horizontally
+    /vertically (not diagonally)."""
     perimeter = 0
     for i in range(len(grid)):
         for j in range(len(grid[0])):
