@@ -45,3 +45,4 @@ int binary_search(int *array, size_t size, int value)
 		return (half + result);
 	}
 	return (-1);
+}
