@@ -26,13 +26,11 @@ int binary_search(int *array, size_t size, int value)
 	num = (size - 1) / 2;
 	if (array[num] == value)
 		return (num);
-	else if (size <= 1)
-		return (-1);
-	if (array[num] > value)
+	else if (array[num] > value)
 	{
 		return (binary_search(array, num, value));
 	}
-	if (array[num] < value)
+	else if (array[num] < value)
 	{
 		num += 1;
 		i = binary_search(array + num, size - num, value);
