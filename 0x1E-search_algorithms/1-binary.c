@@ -32,11 +32,10 @@ int binary_search(int *array, size_t size, int value)
 	}
 	else if (array[num] < value)
 	{
-		num += 1;
 		i = binary_search(array + num, size - num, value);
 		if (i == -1)
 			return (-1);
-		i = i + num;
+		i = i + num + 1;
 	}
 	return (i);
 }
