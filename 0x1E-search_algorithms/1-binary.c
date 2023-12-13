@@ -1,48 +1,48 @@
 #include "search_algos.h"
 
 /**
- * binary_search - uses binary search to find value in array of ints
- * @array: the array of integers to search through, sorted in ascending order
- * @size: the size of the array of ints
- * @value: the int value searching for
- *
- * Return: the index in the array where match to value is or -1 if failed
+ * binary_search -  searches for a value in a sorted array of
+ * integers using the Binary search algorithm
+ * @array: array to search in
+ * @size: size of array
+ * @value: value to search for
+ * Return: index of value or -1 if not found
  */
 
 int binary_search(int *array, size_t size, int value)
 {
-	int half = ((size - 1) / 2), result = 0;
-	size_t i = 0;
+	int num, i;
 
 	if (array == NULL || size < 1)
 		return (-1);
-
 	printf("Searching in array: ");
-	for (i = 0; i < size; i++)
+	for (i = 0; i < (int)size; i++)
 	{
+		if (i != 0)
+			printf(",");
 		printf("%d", array[i]);
-		if (i != (size - 1))
-			printf(", ");
-		else
-			printf("\n");
 	}
-
-	if (array[half] == value)
-		return (half);
-	else if (size <= 1)
-		return (-1);
-
-	if (array[half] > value)
+	printf("\n");
+	if (size % 2 == 0)
+		num = (size - 1) / 2;
+	else
+		num = size / 2;
+	if (array[num] == value)
 	{
-		return (binary_search(array, half, value));
+		return (num);
 	}
-	if (array[half] < value)
+	else if (array[num] > value)
 	{
-		half += 1;
-		result = binary_search(&array[half], size - half, value);
-		if (result == -1)
+		i = binary_search(array, num, value);
+		return (i);
+	}
+	else if (array[num] < value)
+	{
+		i = binary_search(array + num + 1, size - num - 1, value);
+		if (i == -1)
 			return (-1);
-		return (half + result);
+		i = i + num + 1;
+		return (i);
 	}
 	return (-1);
 }
