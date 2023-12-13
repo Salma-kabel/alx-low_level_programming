@@ -28,7 +28,8 @@ int binary_search(int *array, size_t size, int value)
 		return (num);
 	else if (array[num] > value)
 	{
-		return (binary_search(array, num, value));
+		i = (binary_search(array, num, value));
+		return (i);
 	}
 	else if (array[num] < value)
 	{
