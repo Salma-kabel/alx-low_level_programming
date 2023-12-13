@@ -31,12 +31,14 @@ int binary_search(int *array, size_t size, int value)
 	{
 		return (num);
 	}
-	else if (array[num] > value)
+	else if (size <= 1)
+		return (-1);
+	if (array[num] > value)
 	{
 		i = binary_search(array, num, value);
 		return (i);
 	}
-	else if (array[num] < value)
+	if (array[num] < value)
 	{
 		i = binary_search(array + num + 1, size - num - 1, value);
 		if (i == -1)
